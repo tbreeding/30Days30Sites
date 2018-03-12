@@ -1,0 +1,243 @@
+
+/* Colors: 
+$blue: #0B4F6C; //- Dark Imperial Blue
+$cyan: #01BAEF; //- Cyan(Process)
+$white: #FBFBFF; //- Ghost White
+$silver: #757575; //- Sonic Silver
+$green: #20BF55; //Malachite;
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Lato');
+/* General Styling */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 5px;
+  background-color: #757575;
+  text-align: center;
+}
+.containter {
+  margin: auto;
+  width: 80vw;
+  text-align: left;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "about"
+    "portfolio"
+    "contact"
+    "mailingList";
+  grid-gap: 5px;
+  justify-content: center;
+}
+hr{
+  border: 2px solid;
+  margin: 5px 0;
+}
+/* Header Styling */
+header {
+  grid-area: header;
+  padding: 5px;
+  background-color: #01BAEF;
+  font-family: Lato, Times;
+  color: #FBFBFF;
+  user-select: none;
+  display: grid;  
+  grid-template-areas: 
+    "a b b b b b b b b b c"; 
+  align-content: center;
+}
+#title {
+  grid-area: a;
+  font-size: 2em;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+header a {
+  text-decoration: none;
+  color: #FBFBFF;
+  font-size: 1.5em;
+}
+#nav {
+  height: 100%;
+  grid-area: c;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+.nav-item {
+  max-height: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  transition: all .3s;
+}
+.nav-item:hover {
+  background-color: #FBFBFF;
+  color: #01BAEF;
+}
+/* About Section Styling */
+#about {
+  grid-area: about;
+  min-height: 300px;
+  background-color: #FBFBFF;
+  color: #0B4F6C;
+  padding: 20px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    "t t t t t i"
+}
+#abtText {
+  grid-area: t;
+  font-family: Lato;
+}
+#about img{
+  grid-area: i;
+  height: 100%;
+  max-height: 300px;
+  align-self: center;
+  justify-self: end;
+  border: 5px solid #0B4F6C;
+  border-radius: 100%;
+}
+#about ul {
+  list-style-type: square;
+  text-align: left;
+}
+/* Portfolio Section Styling */
+#portfolio {
+  grid-area: portfolio;
+  min-height: 200px;
+  background-color: #0B4F6C;
+  color: #FBFBFF;
+  padding: 10px 50px;
+}
+#portfolio h2 {
+  font-family: Lato;
+  font-size: 2em;
+  margin: 0;
+}
+#portfolioItems {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.portfolioItem {
+  max-height: 150px;
+  border: 1px solid #FBFBFF;
+  padding: 5px;
+  margin: 10px;
+  opacity: .7;
+  transition: all .3s;
+}
+.portfolioItem:hover {
+  opacity: 1;
+}
+#contact {
+  background-color: #01BAEF;
+  color: #FBFBFF;
+  font-family: Lato;
+  padding: 20px;
+}
+#contactInfoLinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#contactInfo {
+  margin-top: 5px;
+}
+#contact h2 {
+  font-size: 2em;
+  margin: 0;
+}
+#contact h3, #contact h4 {
+  color: #FBFBFF;
+  margin: 2px;
+}
+#contact a {
+  text-decoration: none;
+  color: #FBFBFF;
+}
+#links {
+  margin-top: 5px;
+  justify-self: end;
+  align-self: center;
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+#links a {
+  border: 2px solid #FBFBFF;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #FBFBFF;
+  color: #01BAEF;
+  margin: 5px;
+  transition: all .3s;
+}
+#links a:hover {
+  background-color: #01BAEF;
+  color: #FBFBFF;
+}
+/*Mailing List section styling */
+#mailingList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #0B4F6C;
+  padding: 0px 15px;
+  color: #FBFBFF;
+  font-family: Lato;
+}
+#emailInput {
+  margin: 15px 0;
+  font-family: Lato;
+  width: 250px;
+  padding: 5px;
+}
+/* Responsive */
+@media screen and (max-width: 640px) {
+  header {
+    grid-template-areas:
+      "a a a"
+      "c c c";
+  }
+  #title {
+    font-size: 1.5em;
+  }
+  header a {
+    text-decoration: none;
+    color: #FBFBFF;
+    font-size: 1em;
+  }
+  #about {
+    padding: 10px;
+    grid-gap: 5px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "i"
+      "t"
+  }
+  #about img {
+    justify-self: center;
+  }
+  #portfolio {
+    padding: 5px 20px;
+  }
+  .portfolioItem {
+    height: 50px;
+    margin: 5px;
+  }
+}
+@media screen and (max-width: 793px) {
+  .portfolioItem {
+    display: flex;
+    max-height: 120px;
+    margin: 5px;
+  }
+}

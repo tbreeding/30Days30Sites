@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Pacifico');
+
+/*#1c3144: #1C3144; //Yankees Blue
+#d00000: #D00000; //Boston U Red
+#ffba08: #FFBA08; //Selective Yellow
+#a2aebb: #A2AEBB; //Wild Blue Yonder
+#3f88c5: #3f88c5; //Tufts Blue
+Open sanS: Open Sans;
+Pacifico: Pacifico;*/
+/*General Styling*/
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 5px;
+  margin: 0;
+  background-color: #a2aebb;
+}
+nav, .page {
+  margin: 0 auto;
+  border-radius: 5px;
+  max-width: 900px;
+}
+/*Style the nav bar*/
+nav {
+  margin-bottom: 5px;
+  font-family: Pacifico;
+  background-color: #1c3144;
+  color: #ffba08;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  align-items: center;
+  min-height: 10vh;
+  user-select: none;
+}
+.btn, .ddBtn {
+  padding: 5px;
+  transition: all .3s;
+  cursor: pointer;
+}
+.btn:hover, .ddBtn:hover {
+  border: 2px solid #ffba08;
+  border-radius: 10px;
+  color: #d00000;
+}
+.register, .ddRegister {
+  padding: 5px 20px;
+  border: 2px solid #ffba08;
+  color: #d00000;
+  cursor: pointer;
+  transition: all .3s;
+}
+.ddBtn, .ddRegister {
+  margin: 5px;
+}
+.register:hover, .ddRegister:hover {
+  padding: 5px 30px;
+  border-radius: 10px;
+  border-color: #3f88c5;
+  background-color: #ffba08;
+  color: #3f88c5;
+  font-size: 1.2em;
+}
+.dropDownMenu {
+  display: none;
+}
+/*Style the page blocks consistently*/
+.page {
+  min-height: 85vh;
+  background-color: #ffba08;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+.page img {
+  height: 82vh;
+  grid-column: 2;
+  opacity: .7;
+  border: 5px solid #3f88c5;
+  border-radius: 20px;
+  justify-self: end;
+}
+.content {
+  padding: 0 20px;
+  height:82vh;
+  font-family: Open Sans;
+  color: #d00000;
+  display: grid;
+}
+.content h2 {
+  font-family: Pacifico;
+  font-size: 2.5em;
+  text-shadow: 1px 1px #3f88c5;
+  margin-bottom: 0;
+}
+.content h3 {
+  font-size: 1.8em;
+  text-shadow: 1px 1px #3f88c5;
+  margin: 0;
+}
+.content h4 {
+  text-shadow: 1px 1px #3f88c5;
+  text-decoration: underline;
+}
+/*Details Page Styling*/
+iframe {
+  height: 82vh;
+  width: 400px;
+  justify-self: end;
+  border: 5px solid #3f88c5;
+  border-radius: 20px;
+}
+#mapLink {
+  display: none;
+  text-decoration: none;
+  font-family: Open Sans;
+  justify-self: center;
+  margin-top: -40px;
+  color: #d00000;
+  border: 2px solid #d00000;
+  border-radius: 10px;
+  padding: 5px 25px;
+  transition: all .3s;
+}
+#mapLink h4 {
+  margin: 0;
+}
+#mapLink:hover {
+  border: #ffba08;
+  background-color: #d00000;
+  color: #ffba08;
+}
+/*Registration Page Styling*/
+form {
+  margin-top: 10px;
+  height: 300px;
+  padding: 20px;
+  display: grid;
+  grid-gap: 15px;
+  align-content: start;
+
+}
+input {
+  height: 40px;
+  font-family: Open SanS;
+  padding: 0 10px;
+  border-radius: 10px;
+  background-color: #a2aebb;
+  color: #d00000;
+  font-weight: bold;
+  font-size: 1.1em;
+  outline: none;
+}
+.submitBtn {
+  text-align: center;
+  height: 60px;
+  width: 150px;
+  justify-self: center;
+  border-radius: 10px;
+  background-color: #d00000;
+  box-shadow: 5px 5px 3px 0 #1c3144;
+  color: #ffba08;
+  font-family: Pacifico;
+  font-weight: bold;
+  font-size: 2em;
+  user-select: none;
+}
+.submitBtn:active {
+  box-shadow: 1px 1px 3px 0 #1c3144;
+  transform: translate(2px, 2px)
+}
+#blnk, #thanks {
+  justify-self: center;
+  display: none;
+}
+/*Hides the other .page Div's on load*/
+#who, #what, #details, #register {
+  display: none;
+}
+/* Responsive Styling */
+@media (max-width: 700px) {
+  body {
+    padding: 3px;
+    grid-gap: 3px;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    min-height: 80px;
+    justify-content: center;
+  }
+  .btn, .register {
+    display: none;
+  }
+  .dropDownMenu {
+    display: flex;
+    flex-direction: column;
+  }
+  .dropDownMenuBtn {
+    height: 40px;
+    border: 2px solid #ffba08;
+    padding: 5px 10vw;
+    min-width: 150px;
+    margin: 20px;    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .bar {
+    height: 6px;
+    width: 40px;
+    margin: 2px;
+    background-color: #ffba08;
+  }
+  .dropDownContent {
+    display: none;
+    text-align: center;
+  }
+  .page {
+    grid-template-columns: 1fr;
+  }
+  .content, {
+    justify-self: center;
+  }
+  img {
+    display: none;
+  }
+  iframe {
+    display: none;
+  }
+  #mapLink {
+    display: block;
+  }
+}
+.mobileClick {
+  display:flex;
+  flex-direction: column;
+  margin: 10px;
+}
