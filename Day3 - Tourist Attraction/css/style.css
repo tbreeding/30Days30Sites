@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css?family=Itim|Permanent+Marker|Open+Sans");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #444554;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 200px, 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 10px;
+}
+
+#desktopNav {
+  position: fixed;
+  grid-column: 1;
+  height: 100vh;
+  width: 200px;
+  background-color: #7F7B82;
+  font-family: Permanent Marker;
+  font-size: 1.2em;
+  color: #E6E8E6;
+  text-shadow: 0 0 30px #172121;
+  display: flex;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  user-select: none;
+}
+
+.logo {
+  padding: 10px 20px 0 20px;
+  font-size: 1.5em;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.menu hr {
+  margin: 0 30px;
+  border-top: 1px dashed #E6E8E6;
+  border-bottom: none;
+}
+
+.menu h4 {
+  transition: all .2s;
+  cursor: pointer;
+}
+
+.menu h4:hover {
+  color: #444554;
+  text-shadow: none;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.fab {
+  font-size: 1.5em;
+  text-shadow: none;
+  cursor: pointer;
+  width: 50px;
+}
+
+.fa-twitter {
+  color: white;
+  background-color: #1DA1F2;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 2px 2px gray;
+}
+
+.fa-twitter:hover {
+  background-color: white;
+  color: #1DA1F2;
+}
+
+.fa-facebook-f {
+  color: white;
+  background-color: #4267B2;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 2px 2px gray;
+}
+
+.fa-facebook-f:hover {
+  color: #4267B2;
+  background-color: white;
+}
+
+#mobileNav {
+  display: none;
+  position: fixed;
+  grid-column: 1;
+  height: 100vh;
+  width: 80px;
+  background-color: #7F7B82;
+  font-family: Permanent Marker;
+  color: #E6E8E6;
+  text-shadow: 0 0 30px #172121;
+  flex-direction: column;
+  justify-content: space-between;
+  user-select: none;
+}
+
+#mobileNav .menu {
+  display: none;
+}
+
+#hamburger {
+  height: 50px;
+  width: 50px;
+  margin: 30px;
+  border: 2px solid #E6E8E6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  align-self: center;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+#hamburger:hover {
+  border-color: #444554;
+}
+
+#hamburger:hover .bar {
+  background-color: #444554;
+}
+
+.bar {
+  height: 6px;
+  width: 40px;
+  margin: 2px;
+  background-color: #E6E8E6;
+  transition: all .3s;
+}
+
+.panel {
+  background-color: #7F7B82;
+  grid-column: 2;
+  width: calc(100vw - 225px);
+  justify-self: end;
+}
+
+.title {
+  font-family: Permanent Marker;
+  font-size: 2.5em;
+  color: #E6E8E6;
+  text-shadow: 0 0 10px #172121;
+}
+
+.block {
+  margin: 10px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 3fr;
+  padding: 10px;
+  border: 1px solid #E6E8E6;
+  border-radius: 10px;
+}
+
+.block img {
+  height: 220px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.block p {
+  grid-column: 2;
+  font-family: Open Sans;
+  text-align: left;
+  align-self: start;
+  margin-left: 10px;
+}
+
+.block span {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+#activities, #trip, #travel {
+  display: none;
+}
+
+@media (min-width: 701px) {
+  #desktopNav {
+    display: flex;
+  }
+
+  #mobileNav {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  #desktopNav {
+    display: none;
+  }
+
+  #mobileNav {
+    display: flex;
+  }
+
+  .logo {
+    font-size: .8em;
+  }
+
+  #socialIconsMob {
+    flex-direction: column;
+  }
+
+  i {
+    margin: 10px 0;
+  }
+
+  .panel {
+    width: calc(100vw - 100px);
+  }
+
+  .title {
+    font-size: 1.5em;
+  }
+
+  .block {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 1fr;
+  }
+
+  .block img {
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: center;
+    height: 60vw;
+  }
+
+  .block p {
+    grid-row: 2;
+    grid-column: 1;
+    font-size: .9em;
+  }
+}
